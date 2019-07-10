@@ -75,8 +75,11 @@ static int32_t GetFields( Look_t* ptL, uint32_t** offsets, uint32_t* offsetCount
 int main()
 {
     Look_t look;
+    Reference_t refs[] = { { 1, 2, 3 }, 3 };
     uint32_t* offs = NULL;
     uint32_t count = 0;
     memset(&look, 0, sizeof(look));
+    look.count = 1;
+    look.refs = refs;
     return GetFields(&look, &offs, &count);
 }
